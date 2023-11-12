@@ -23,7 +23,7 @@
   <div class="scene" id="welcome">
     <article class="content">
 
- 
+
 
       <div class="row">
         <div class=""col-12>
@@ -35,6 +35,10 @@
             <img class="hidesm" src="assets/images/intro_wedding.jpg" alt="Intro Gallery Dining Sample Pictures">
           </div>
           <h1>Book a Room</h1>
+
+          <h3 class="test" *ngFor="let msg of welcome">
+            {{msg}}
+          </h3>
           <form class="form-horizontal" [formGroup]="roomsearch"
           (ngSubmit)="onSubmit(roomsearch)">
 
@@ -58,7 +62,7 @@
               </div>
               </form>
 
-        
+
         </div>
       </div>
 
