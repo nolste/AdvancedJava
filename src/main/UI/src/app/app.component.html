@@ -39,6 +39,9 @@
           <h3 class="test" *ngFor="let msg of welcome">
             {{msg}}
           </h3>
+          <h2 class="testTimeZone" *ngFor="let msg1 of timezone">
+            {{msg1}}
+          </h2>
           <form class="form-horizontal" [formGroup]="roomsearch"
           (ngSubmit)="onSubmit(roomsearch)">
 

@@ -17,6 +17,8 @@ public class TimeZoneHandler {
         ZoneId zMountain=ZoneId.of("America/Denver");
         ZoneId zUCT=ZoneId.of("UCT");
 
+        //looks like I will have to change this to supply a time and then give that time in different time zones.
+        //not just give the current time in those zones
         LocalTime time1 = LocalTime.parse(LocalTime.now(zEastern).format(DateTimeFormatter.ofPattern("HH:mm")));
         LocalTime time2 = LocalTime.parse(LocalTime.now(zMountain).format(DateTimeFormatter.ofPattern("HH:mm")));
         LocalTime time3 = LocalTime.parse(LocalTime.now(zUCT).format(DateTimeFormatter.ofPattern("HH:mm")));
