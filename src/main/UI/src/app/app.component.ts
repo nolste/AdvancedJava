@@ -52,7 +52,7 @@ export class AppComponent implements OnInit{
       message => {this.welcome=message;}
     )
     this.getTimeZones().subscribe(
-      message => {this.timezone=message;}
+      times => {this.timezone=times;}
     )
   }
 

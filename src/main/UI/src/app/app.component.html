@@ -5,6 +5,7 @@
     <div class="hgroup">
       <h1>Landon Hotel</h1>
       <h2>London, Ontario</h2>
+      <h2 class="test" *ngFor="let msg of welcome">{{msg}}</h2>
       <p><a href="/#welcome"><img src="assets/images/arrow.png" alt="down arrow"></a></p>
     </div>
   </article>
@@ -35,12 +36,11 @@
             <img class="hidesm" src="assets/images/intro_wedding.jpg" alt="Intro Gallery Dining Sample Pictures">
           </div>
           <h1>Book a Room</h1>
-
-          <h3 class="test" *ngFor="let msg of welcome">
-            {{msg}}
-          </h3>
-          <h2 class="testTimeZone" *ngFor="let msg1 of timezone">
-            {{msg1}}
+          <h2 class="testTimeZone" *ngIf="timezone && timezone.length >= 3">
+            <p> Join us for the Holiday Celebration at the following time:</p>
+            <p> {{timezone[0]}} </p>
+            <p> {{timezone[1]}} </p>
+            <p> {{timezone[2]}}</p>
           </h2>
           <form class="form-horizontal" [formGroup]="roomsearch"
           (ngSubmit)="onSubmit(roomsearch)">
