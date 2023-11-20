@@ -24,19 +24,22 @@ public class TimeZoneHandler {
         Month december = Month.of(12);
 
         LocalDateTime localDateTime=LocalDateTime.of(2023,december,25,12,22);
-
-        System.out.println("local time "+localDateTime.toString());
-        list.add("Local Time/UCT " + localDateTime.toString());
+        DateTimeFormatter CUSTOM_FORMATTER = DateTimeFormatter.ofPattern("HH:mm");
+        String time = localDateTime.format(CUSTOM_FORMATTER);
+        System.out.println("local time "+time);
+        list.add("UCT " + time);
 
         ZonedDateTime zonedDateTime=localDateTime.atZone(zUCT);
         ZonedDateTime zonedDateTimeEastern=zonedDateTime.withZoneSameInstant(zEastern);
         LocalDateTime localDateTimeEastern=zonedDateTimeEastern.toLocalDateTime();
-        list.add("Eastern Time " + localDateTimeEastern.toString());
+        String eastTime = localDateTimeEastern.format(CUSTOM_FORMATTER);
+        list.add("Eastern Time " + eastTime);
 
 
         ZonedDateTime zonedDateTimeMountain=zonedDateTime.withZoneSameInstant(zMountain);
         LocalDateTime localDateTimeMountain=zonedDateTimeMountain.toLocalDateTime();
-        list.add("Mountain Time " + localDateTimeMountain.toString());
+        String mountTime = localDateTimeMountain.format(CUSTOM_FORMATTER);
+        list.add("Mountain Time " + mountTime);
 
 
 /*        ZoneId zEastern=ZoneId.of("America/New_York");
